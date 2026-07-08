@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    ============================================================
+    PERSONAL PORTFOLIO WEBSITE
+    Single-file HTML / CSS / JS
+    Replace content marked with "EDIT HERE"
+    ============================================================
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alex Morgan | Software Developer</title>
+
+    <meta name="description" content="Personal portfolio of Alex Morgan, a software developer building modern web applications.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+:root {
+    --bg-primary: #0b0f19;
+    --bg-secondary: #111827;
+    --card-bg: rgba(255,255,255,0.06);
+
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+
+    --border: rgba(255,255,255,0.12);
+
+    --shadow:
+    0 20px 40px rgba(0,0,0,.25);
+
+    --transition: .3s ease;
+}
+
+
+.light {
+    --bg-primary:#f8fafc;
+    --bg-secondary:#ffffff;
+
+    --card-bg:#ffffff;
+
+    --text-primary:#111827;
+    --text-secondary:#4b5563;
+
+    --border:rgba(0,0,0,.1);
+
+    --shadow:
+    0 20px 40px rgba(0,0,0,.08);
+}
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+
+body {
+    font-family:"Inter",sans-serif;
+    background:var(--bg-primary);
+    color:var(--text-primary);
+    transition:background var(--transition),color var(--transition);
+    line-height:1.6;
+}
+
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+
+.container {
+    width:min(1100px,90%);
+    margin:auto;
+}
+
+
+section {
+    padding:100px 0;
+}
+
+
+.section-title {
+    font-size:2.2rem;
+    margin-bottom:50px;
+    text-align:center;
+}
+
+
+.section-title span {
+    color:var(--accent);
+}
+
+
+/* ================= HEADER ================= */
+
+
+header {
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+    backdrop-filter:blur(15px);
+
+    background:
+    rgba(11,15,25,.65);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+.light header {
+    background:
+    rgba(255,255,255,.7);
+}
+
+
+.nav {
+
+    height:75px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+.logo {
+
+    font-size:1.5rem;
+    font-weight:800;
+
+}
+
+
+.logo span {
+    color:var(--accent);
+}
+
+
+.nav-links {
+
+    display:flex;
+    gap:30px;
+}
+
+
+.nav-links a {
+
+    color:var(--text-secondary);
+    font-weight:500;
+
+}
+
+
+.nav-links a:hover {
+
+    color:var(--accent);
+
+}
+
+
+.theme-btn {
+
+    cursor:pointer;
+
+    border:none;
+
+    background:var(--card-bg);
+
+    color:var(--text-primary);
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+}
+
+
+/* MOBILE MENU */
+
+.menu-btn {
+
+    display:none;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+}
+
+
+/* ================= HERO ================= */
+
+
+.hero {
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+.hero-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    1.2fr .8fr;
+
+    gap:50px;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+    clamp(2.5rem,5vw,4.5rem);
+
+    line-height:1.1;
+
+}
+
+
+.hero h1 span {
+
+    color:var(--accent);
+
+}
+
+
+.hero h2 {
+
+    margin:20px 0;
+
+    font-size:1.5rem;
+
+    color:var(--text-secondary);
+
+}
+
+
+.hero p {
+
+    max-width:600px;
+
+    color:var(--text-secondary);
+
+    font-size:1.1rem;
+
+}
+
+
+
+.buttons {
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:35px;
+
+}
+
+
+.btn {
+
+    padding:14px 25px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.primary {
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+
+.primary:hover {
+
+    background:var(--accent-hover);
+
+    transform:translateY(-3px);
+
+}
+
+
+.secondary {
+
+    border:1px solid var(--border);
+
+}
+
+
+.secondary:hover {
+
+    transform:translateY(-3px);
+
+}
+
+
+/* PROFILE CARD */
+
+
+.profile-card {
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.avatar {
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--accent),
+    #ec4899
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:4rem;
+
+    font-weight:800;
+
+}
+
+
+/* ================= CARDS ================= */
+
+
+.card-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+
+
+.card {
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.3s;
+
+}
+
+
+
+.card:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.card h3 {
+
+    margin-bottom:10px;
+
+}
+
+
+.card p {
+
+    color:var(--text-secondary);
+
+}
+
+
+/* SKILLS */
+
+
+.skills {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+
+.skill {
+
+    padding:8px 15px;
+
+    border-radius:50px;
+
+    background:
+    rgba(99,102,241,.15);
+
+    color:var(--accent-hover);
+
+    font-size:.9rem;
+
+}
+
+
+
+/* EXPERIENCE */
+
+
+.timeline {
+
+    border-left:2px solid var(--accent);
+
+    padding-left:30px;
+
+}
+
+
+.timeline-item {
+
+    margin-bottom:40px;
+
+}
+
+
+.timeline-item h3 {
+
+    margin-bottom:5px;
+
+}
+
+
+.date {
+
+    color:var(--accent);
+
+    font-weight:600;
+
+}
+
+
+/* PROJECTS */
+
+
+.project-links {
+
+    margin-top:20px;
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+.project-links a {
+
+    color:var(--accent);
+
+    font-weight:600;
+
+}
+
+
+/* CONTACT */
+
+
+.contact-box {
+
+    text-align:center;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    padding:50px;
+
+    border-radius:25px;
+
+}
+
+
+.socials {
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    font-size:1.5rem;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer {
+
+    text-align:center;
+
+    padding:30px;
+
+    color:var(--text-secondary);
+
+}
+
+
+
+/* ANIMATIONS */
+
+
+.hidden {
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+
+.show {
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:800px){
+
+
+.hero-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.nav-links {
+
+    position:absolute;
+
+    top:75px;
+
+    left:0;
+
+    width:100%;
+
+    background:var(--bg-secondary);
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:30px;
+
+    display:none;
+
+}
+
+
+.nav-links.active {
+
+    display:flex;
+
+}
+
+
+.menu-btn {
+
+    display:block;
+
+}
+
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="container nav">
+
+<div class="logo">
+Alex<span>.</span>
+</div>
+
+
+<nav class="nav-links">
+
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+<div>
+
+<button class="theme-btn" id="themeToggle">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+
+<i class="fa-solid fa-bars menu-btn" id="menuBtn"></i>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+
+<div class="hidden">
+
+<h1>
+Hi, I'm <span>Alex Morgan</span>
+</h1>
+
+
+<h2>
+Software Developer & Problem Solver
+</h2>
+
+
+<p>
+I build fast, reliable digital experiences by combining clean code,
+creative thinking, and user-focused design.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn primary" href="#projects">
+View Work
+</a>
+
+
+<a class="btn secondary" href="#contact">
+Contact Me
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div class="profile-card hidden">
+
+<div class="avatar">
+AM
+</div>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+  <!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title hidden">
+About <span>Me</span>
+</h2>
+
+
+<div class="card hidden">
+
+<p>
+I'm a software developer passionate about building practical solutions
+that improve people's everyday lives. I enjoy learning new technologies,
+solving complex problems, and turning ideas into useful products.
+</p>
+
+
+<div class="skills">
+
+<span class="skill">JavaScript</span>
+<span class="skill">HTML5</span>
+<span class="skill">CSS3</span>
+<span class="skill">React</span>
+<span class="skill">Node.js</span>
+<span class="skill">Git</span>
+<span class="skill">SQL</span>
+<span class="skill">UI/UX Design</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<div class="container">
+
+
+<h2 class="section-title hidden">
+Work <span>Experience</span>
+</h2>
+
+
+
+<div class="timeline">
+
+
+<div class="timeline-item hidden">
+
+<h3>
+Frontend Developer — Nova Digital
+</h3>
+
+<div class="date">
+2024 - Present
+</div>
+
+
+<p>
+Developed responsive web applications, improved user interfaces,
+and collaborated with designers to create accessible products.
+</p>
+
+
+</div>
+
+
+
+
+<div class="timeline-item hidden">
+
+<h3>
+Junior Web Developer — Bright Labs
+</h3>
+
+
+<div class="date">
+2023 - 2024
+</div>
+
+
+<p>
+Built reusable components, fixed bugs, optimized website performance,
+and maintained production applications.
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+
+<h2 class="section-title hidden">
+Featured <span>Projects</span>
+</h2>
+
+
+
+<div class="card-grid">
+
+
+
+<div class="card hidden">
+
+
+<h3>
+TaskFlow App
+</h3>
+
+
+<p>
+A productivity application that helps users organize tasks,
+track progress, and manage personal goals.
+</p>
+
+
+<div class="skills">
+
+<span class="skill">
+JavaScript
+</span>
+
+<span class="skill">
+Firebase
+</span>
+
+<span class="skill">
+CSS
+</span>
+
+</div>
+
+
+
+<div class="project-links">
+
+<a href="#" target="_blank">
+GitHub
+</a>
+
+<a href="#" target="_blank">
+Live Demo
+</a>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card hidden">
+
+
+<h3>
+Weather Dashboard
+</h3>
+
+
+<p>
+A weather application displaying real-time forecasts
+with a clean and responsive interface.
+</p>
+
+
+<div class="skills">
+
+<span class="skill">
+API
+</span>
+
+<span class="skill">
+HTML
+</span>
+
+<span class="skill">
+JavaScript
+</span>
+
+</div>
+
+
+
+<div class="project-links">
+
+<a href="#" target="_blank">
+GitHub
+</a>
+
+
+<a href="#" target="_blank">
+Live Demo
+</a>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card hidden">
+
+
+<h3>
+Portfolio Website
+</h3>
+
+
+<p>
+A modern personal portfolio built from scratch using
+vanilla technologies without frameworks.
+</p>
+
+
+<div class="skills">
+
+<span class="skill">
+HTML5
+</span>
+
+<span class="skill">
+CSS3
+</span>
+
+<span class="skill">
+JavaScript
+</span>
+
+</div>
+
+
+<div class="project-links">
+
+<a href="#" target="_blank">
+GitHub
+</a>
+
+
+<a href="#" target="_blank">
+Live Demo
+</a>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- CONTACT -->
+
+
+<section id="contact">
+
+
+<div class="container">
+
+
+<h2 class="section-title hidden">
+
+Get In <span>Touch</span>
+
+</h2>
+
+
+
+<div class="contact-box hidden">
+
+
+<p>
+Interested in working together?
+Feel free to contact me.
+</p>
+
+
+<br>
+
+
+<a class="btn primary"
+href="mailto:alex.morgan@example.com">
+
+alex.morgan@example.com
+
+</a>
+
+
+
+<div class="socials">
+
+
+<a href="#" aria-label="Github">
+<i class="fa-brands fa-github"></i>
+</a>
+
+
+<a href="#" aria-label="LinkedIn">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+<footer>
+
+© 2026 Alex Morgan. All rights reserved.
+
+</footer>
+
+
+
+
+<script>
+
+
+/*
+==================================================
+THEME SWITCHER
+==================================================
+*/
+
+
+const themeButton =
+document.getElementById("themeToggle");
+
+
+themeButton.addEventListener(
+"click",
+()=>{
+
+document.body.classList.toggle("light");
+
+
+const icon =
+themeButton.querySelector("i");
+
+
+if(document.body.classList.contains("light")){
+
+icon.className="fa-solid fa-sun";
+
+}
+
+else{
+
+icon.className="fa-solid fa-moon";
+
+}
+
+
+});
+
+
+
+
+
+/*
+==================================================
+MOBILE MENU
+==================================================
+*/
+
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+
+const navLinks =
+document.querySelector(".nav-links");
+
+
+
+menuBtn.addEventListener(
+"click",
+()=>{
+
+navLinks.classList.toggle("active");
+
+});
+
+
+
+
+
+/*
+==================================================
+SCROLL ANIMATIONS
+Intersection Observer
+==================================================
+*/
+
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+
+});
+
+
+},
+{
+threshold:.15
+}
+);
+
+
+
+document
+.querySelectorAll(".hidden")
+.forEach(
+(el)=>observer.observe(el)
+);
+
+
+
+</script>
+
+
+</body>
+</html>
